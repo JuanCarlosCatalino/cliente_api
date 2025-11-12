@@ -1,0 +1,85 @@
+document.addEventListener('DOMContentLoaded', function () {
+    obtenerToken();
+    listarEventos();
+});
+
+async function obtenerToken() {
+    try {
+        let datos = new FormData();
+        datos.append('sesion', session_session);
+        datos.append('token', token_token);
+        let result = await fetch(base_url_server + 'src/control/tokensApi.php?tipo=listarTokens', {
+            mode: 'cors',
+            method: 'POST',
+            cache: 'no-cache',
+            body: datos
+        });
+        let json = await result.json();
+        if (json.status && json.contenido && json.contenido.length > 0) {
+            let datos = json.contenido;
+            token = datos[0].token;
+            localStorage.setItem('api_token', token);
+        } else {
+            console.log("Error al obtener el token" + json.mensaje);
+        }
+    } catch (e) {
+        console.log("Error function || " + e);
+    }
+}
+
+//API requests | | | | | ------------------------------------------------
+const uri = 'https://sigev.cwefy.com/src/control/api.php?tipo=';
+let token = localStorage.getItem('api_token');
+
+async function listarPlatosDeRestaurante(id) {
+    let tabla = document.getElementById("tbody_eventos");
+    tabla.innerHTML = `<div class="text-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>`;
+    try {
+        let datosForm = new FormData();
+        datosForm.append('token', token);
+        datosForm.append('idRestaurante', id);
+
+        let respuesta = await fetch(uri + 'listarProximos', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: datosForm
+        });
+
+        let json = await respuesta.json();
+        if (json.status) {
+            if (Array.isArray(json.data)) {
+                tabla.innerHTML = '';
+                let contador = 0;
+                json.data.forEach((item) => {
+                    contador++; // Incrementa aquí
+                    let nuevaFila = document.createElement("tr");
+                    nuevaFila.id = item.id;
+                    nuevaFila.dataset.categoria = item.categoria_evento_id;
+                    nuevaFila.innerHTML = `
+
+                                            <td><a href="#!">#ESN${contador}</a></td>
+                                            <td>${item.fecha_inicio}</td>
+                                            <td><a href="#!">${item.titulo}</a></td>
+                                            <td>${item.categoriaName}</td>
+                                            <td>${item.ubicacion}</td>
+                                            <td>${item.organizador_id}</td>
+                                            <td><i class="bx bxs-circle text-success me-1"></i>${item.estado}</td>
+                    `;
+
+                    tabla.appendChild(nuevaFila);
+                });
+            } else {
+                console.log(json.mensaje);
+                tabla.innerHTML = `<tr><td colspan="7">${json.mensaje}</td></tr>`;
+            }
+        } else {
+            console.log(json.mensaje);
+            tabla.innerHTML = `<tr><td colspan="7">Error al cargar eventos</td></tr>`;
+        }
+    } catch (e) {
+        console.error('Error petición API:', e);
+        document.getElementById("eventsTableBody").innerHTML =
+            `<tr><td colspan="7">Error de conexión</td></tr>`;
+    }
+}
