@@ -7,7 +7,7 @@
                               <div class="card card-full-height">
                                    <div class="card-body ">
                                         <div class="d-flex align-items-center gap-3">
-                                             <img src="assets/images/food-icon/i-2.png" alt="" class="img-fluid">
+                                             <img src="src/view/assets/images/food-icon/i-2.png" alt="" class="img-fluid">
                                              <div>
                                                   <p class="text-dark fw-semibold fs-26 mb-1">80</p>
                                                   <p class="card-title mb-0">Total Orders</p>
@@ -24,7 +24,7 @@
                               <div class="card card-full-height">
                                    <div class="card-body ">
                                         <div class="d-flex align-items-center gap-3">
-                                             <img src="assets/images/food-icon/i-3.png" alt="" class="img-fluid">
+                                             <img src="src/view/assets/images/food-icon/i-3.png" alt="" class="img-fluid">
                                              <div>
                                                   <p class="text-dark fw-semibold fs-26 mb-1">21</p>
                                                   <p class="card-title mb-0">Cancelled</p>
@@ -41,7 +41,7 @@
                               <div class="card card-full-height">
                                    <div class="card-body ">
                                         <div class="d-flex align-items-center gap-3">
-                                             <img src="assets/images/food-icon/i-1.png" alt="" class="img-fluid">
+                                             <img src="src/view/assets/images/food-icon/i-1.png" alt="" class="img-fluid">
                                              <div>
                                                   <p class="text-dark fw-semibold fs-26 mb-1">78</p>
                                                   <p class="card-title mb-0">Confirm</p>
@@ -58,7 +58,7 @@
                               <div class="card card-full-height">
                                    <div class="card-body">
                                         <div class="d-flex align-items-center gap-3">
-                                             <img src="assets/images/food-icon/i-4.png" alt="" class="img-fluid">
+                                             <img src="src/view/assets/images/food-icon/i-4.png" alt="" class="img-fluid">
                                              <div>
                                                   <p class="text-dark fw-semibold fs-26 mb-1">48</p>
                                                   <p class="card-title mb-0">Preparing </p>
@@ -75,7 +75,7 @@
                               <div class="card card-full-height">
                                    <div class="card-body ">
                                         <div class="d-flex align-items-center gap-3">
-                                             <img src="assets/images/food-icon/i-5.png" alt="" class="img-fluid">
+                                             <img src="src/view/assets/images/food-icon/i-5.png" alt="" class="img-fluid">
                                              <div>
                                                   <p class="text-dark fw-semibold fs-26 mb-1">42</p>
                                                   <p class="card-title mb-0">Ready For Delivery</p>
@@ -92,7 +92,7 @@
                               <div class="card card-full-height">
                                    <div class="card-body ">
                                         <div class="d-flex align-items-center gap-3">
-                                             <img src="assets/images/food-icon/i-6.png" alt="" class="img-fluid">
+                                             <img src="src/view/assets/images/food-icon/i-6.png" alt="" class="img-fluid">
                                              <div>
                                                   <p class="text-dark fw-semibold fs-26 mb-1">20</p>
                                                   <p class="card-title mb-0">Order On Its Way</p>
@@ -109,7 +109,7 @@
                               <div class="card card-full-height">
                                    <div class="card-body ">
                                         <div class="d-flex align-items-center gap-3">
-                                             <img src="assets/images/food-icon/i-8.png" alt="" class="img-fluid">
+                                             <img src="src/view/assets/images/food-icon/i-8.png" alt="" class="img-fluid">
                                              <div>
                                                   <p class="text-dark fw-semibold fs-26 mb-1">30</p>
                                                   <p class="card-title mb-0">Pending Orders</p>
@@ -126,7 +126,7 @@
                               <div class="card card-full-height">
                                    <div class="card-body ">
                                         <div class="d-flex align-items-center gap-3">
-                                             <img src="assets/images/food-icon/i-9.png" alt="" class="img-fluid">
+                                             <img src="src/view/assets/images/food-icon/i-9.png" alt="" class="img-fluid">
                                              <div>
                                                   <p class="text-dark fw-semibold fs-26 mb-1">25</p>
                                                   <p class="card-title mb-0">Delivered Order</p>
