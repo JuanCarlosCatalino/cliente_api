@@ -3,7 +3,7 @@ class vistaModelo
 {
     protected static function obtener_vista($vista)
     {
-        $palabras_permitidas_n1 = ['inicio','tokensApi','menu-cards','product-listing','orders','categories-listing','categories-add-edit','customers','reports','offers','locations','settings','todo','invoices','invoice-details','product-add-edit','pos'];
+        $palabras_permitidas_n1 = ['inicio','adminTokens','menu-cards','product-listing','orders','categories-listing','categories-add-edit','customers','reports','offers','locations','settings','todo','invoices','invoice-details','product-add-edit','pos'];
 
         if (in_array($vista, $palabras_permitidas_n1)) {
 

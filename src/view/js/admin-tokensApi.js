@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    listarTokens();
+    obtenerToken();
 });
 async function registrarToken() {
     try {
         let valores = new FormData(frm_new_token);
         valores.append('sesion', session_session);
         valores.append('token', token_token);
-        let result = await fetch(base_url_server + 'src/control/tokensApi.php?tipo=registrarToken', {
+        let result = await fetch(base_url_server + 'src/control/controller-tokensApi.php?tipo=registrarToken', {
             mode: 'cors',
             method: 'POST',
             cache: 'no-cache',
@@ -19,28 +19,23 @@ async function registrarToken() {
             form.reset();
             modal.hide();
             console.log('registrado');
-            listarTokens();
+            obtenerToken();
         } else {
-            let alertContainer = document.getElementById('alert-container');
-            alertContainer.innerHTML = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                              ${json.mensaje}
-                                         </div>`;
+            alert(json.mensaje);
+            console.log(json.mensaje);
         }
     } catch (e) {
         console.log("Error function || " + e);
     }
 }
 
-async function listarTokens() {
-
-    let tableBody = document.getElementById("tbody_tokensApi");
-    tableBody.innerHTML = `<div class="card-body text-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>`;
+async function obtenerToken() {
+    let tableBody = document.getElementById("tbody_tokens");
     try {
         let valores = new FormData();
         valores.append('sesion', session_session);
         valores.append('token', token_token);
-        let result = await fetch(base_url_server + 'src/control/tokensApi.php?tipo=listarTokens', {
+        let result = await fetch(base_url_server + 'src/control/controller-tokensApi.php?tipo=listarTokens', {
             mode: 'cors',
             method: 'POST',
             cache: 'no-cache',
@@ -60,8 +55,8 @@ async function listarTokens() {
                                     <td><a href="#!">#${contador}</a></td>
                                     <td>${item.creado_en}</td>
                                     <td><a href="#!">${item.token}</a></td>
-                                    <td>${item.descripcion}</td>                     
-                                    <td><a href="" class="link-dark" data-bs-toggle="modal" data-bs-target="#actualizazrToken" onclick="obtenerDatosToken(${item.id});"><i class="ri-edit-line align-middle fs-20"></i></a> </td>                
+                                                      
+                                    <td><a href="" class="link-dark" data-bs-toggle="modal" data-bs-target="#act_token" onclick="obtnertokeninfo(${item.id});"><i class="ri-edit-line align-middle fs-20"></i></a> </td>                
                `;
                     tableBody.append(tr);
                 });
@@ -69,7 +64,7 @@ async function listarTokens() {
                 tableBody.innerHTML = '<tr><td colspan="5">no hay tokens para mostrar</td></tr>';
             }
         } else {
-            console.log("json.mensaje");
+            console.log(json.mensaje);
             tableBody.innerHTML = '<tr><td colspan="5">Error al mostrar tokens</td></tr>';
         }
     } catch (e) {
@@ -77,17 +72,17 @@ async function listarTokens() {
     }
 }
 
-async function obtenerDatosToken(idToken) {
+async function obtnertokeninfo(idToken) {
     let token = document.getElementById("tokenApi_new");
     let descripcion = document.getElementById("descripcion_new");
-    let idTokenInput = document.getElementById("idToken_new");
+    let idtoken = document.getElementById("idToken_new");
     let body = document.querySelector("#actualizazrToken .modal-body");
     try {
         let datos = new FormData();
         datos.append('sesion', session_session);
         datos.append('token', token_token);
         datos.append('idToken', idToken);
-        let result = await fetch(base_url_server + 'src/control/tokensApi.php?tipo=obtenerDatosToken', {
+        let result = await fetch(base_url_server + 'src/control/controller-tokensApi.php?tipo=obtenerDatosToken', {
             mode: 'cors',
             method: 'POST',
             cache: 'no-cache',
@@ -96,7 +91,7 @@ async function obtenerDatosToken(idToken) {
         let json = await result.json();
         if (json.status) {
             let tokenData = json.contenido;
-            idTokenInput.value = tokenData.id;
+            idtoken.value = tokenData.id;
             token.value = tokenData.token;
             descripcion.value = tokenData.descripcion;
         }else{
@@ -114,7 +109,7 @@ async function actualizarToken() {
         let valores = new FormData(frm_update_token);
         valores.append('sesion', session_session);
         valores.append('token', token_token);
-        let result = await fetch(base_url_server + 'src/control/tokensApi.php?tipo=actualizarToken', {
+        let result = await fetch(base_url_server + 'src/control/controller-tokensApi.php?tipo=actualizarToken', {
             mode: 'cors',
             method: 'POST',
             cache: 'no-cache',
@@ -122,15 +117,12 @@ async function actualizarToken() {
         });
         let json = await result.json();
         if (json.status) {
-            let modal = bootstrap.Modal.getInstance(document.getElementById('actualizazrToken'));
+            let modal = bootstrap.Modal.getInstance(document.getElementById('act_token'));
             modal.hide();
-            listarTokens();
+            obtenerToken();
         } else {
-            let alertContainer = document.getElementById('alert-container-upd');
-            alertContainer.innerHTML =  `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                              ${json.mensaje}
-                                         </div>`;
+            alert(json.mensaje);
+            console.log(json.mensaje);
         }
     } catch (e) {
         console.log("Error function || " + e);

@@ -21,6 +21,31 @@
         const session_session = '<?php echo $_SESSION['sesion_id']; ?>';
         const token_token = '<?php echo $_SESSION['sesion_token']; ?>';
     </script>
+    <style>
+        /* Full page loader */
+          #fullpage-loader {
+          position: fixed;
+          inset: 0; /* top:0; right:0; bottom:0; left:0; */
+          background: rgba(255,255,255,0.85);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 99999;
+          transition: opacity 0.2s ease;
+          }
+
+          /* Ocultar por defecto */
+          #fullpage-loader.hidden {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          }
+
+          /* Spinner sencillo (usa bootstraps spinner markup si ya tienes bootstrap) */
+          #fullpage-loader .loader-box {
+          text-align: center;
+          }
+    </style>
 </head>
 
 <body>
@@ -65,7 +90,7 @@
                               </a>
                          </li>
                          <li class="menu-item">
-                              <a class="menu-link" href="tokensApi">
+                              <a class="menu-link" href="adminTokens">
                                    <span class="nav-icon">
                                         <i class="ri-key-line"></i>
                                    </span>

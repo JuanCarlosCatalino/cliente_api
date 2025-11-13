@@ -101,22 +101,22 @@
                                    </div>
                                    <div class="">
                                         <div class="table-responsive">
-                                             <table class="table align-middle mb-0 table-hover table-centered">
+                                             <table class="table align-middle mb-0 table-hover table-centered" id="tbl_platos">
                                                   <thead class="bg-light-subtle fs-12 text-uppercase">
                                                        <tr>
                                                             <th class="py-2">Photo</th>
                                                             <th class="py-2">Product Name</th>
                                                             <th class="w-25 py-2">Description</th>
-                                                            <th class="w-25 py-2">Ingredients</th>
+                                                            <!-- <th class="w-25 py-2">Ingredients</th> -->
                                                             <th class="py-2">Price</th>
-                                                            <th class="py-2">Rating</th>
+                                                           <!--  <th class="py-2">Rating</th> -->
                                                             <th class="py-2">Cuisine Type</th>
                                                             <th class="py-2">Food Type</th>
                                                             <th class="py-2">Action</th>
                                                        </tr>
                                                   </thead>
-                                                  <tbody>
-                                                       <tr>
+                                                  <tbody id="tbody_platos">
+<!--                                                        <tr>
                                                             <td>
                                                                  <a href="src/view/assets/images/food-icon/pic12.png">
                                                                       <img src="src/view/assets/images/food-icon/pic12.png" alt="" class="avatar-lg">
@@ -152,81 +152,7 @@
                                                                       <a href="#!" class="link-danger"><i class="ri-delete-bin-5-line align-middle fs-20"></i></a>
                                                                  </div>
                                                             </td>
-                                                       </tr>
-
-                                                       <tr>
-                                                            <td>
-                                                                 <a href="src/view/assets/images/food-icon/pic13.png">
-                                                                      <img src="src/view/assets/images/food-icon/pic13.png" alt="" class="avatar-lg">
-                                                                 </a>
-                                                            </td>
-                                                            <td>
-                                                                 <div class="d-flex align-items-center gap-1">
-                                                                      <div>
-                                                                           <a href="#!" class="link-dark fw-semibold fs-15">Shanghai Noodles</a>
-                                                                           <p class="mb-0 mt-1">Large bowl</p>
-                                                                      </div>
-                                                                 </div>
-                                                            </td>
-                                                            <td>Shanghai noodles are a specific type of noodle that are a wheat flour...</td>
-                                                            <td>Green Onions , Sesame Seeds , Soy Sauce , Sesame Oil , Cilantro , Chili Oil or Sriracha , Bean Sprouts...</td>
-                                                            <td>$13.00</td>
-                                                            <td>
-                                                                 <p class="mb-0"><i class="ri-star-fill text-warning me-1 fs-16"></i>4.1/5</p>
-                                                            </td>
-                                                            <td>Thai</td>
-                                                            <td>
-                                                                 <div class="avatar-sm">
-                                                                      <span class="avatar-title rounded-2 fw-semibold border border-success text-success">
-                                                                           <i class="ri-circle-fill fs-16"></i>
-                                                                      </span>
-                                                                 </div>
-                                                            </td>
-                                                            <td>
-                                                                 <div class="d-flex gap-3">
-                                                                      <a href="#!" class="text-muted"><i class="ri-eye-line align-middle fs-20"></i></a>
-                                                                      <a href="#!" class="link-dark"><i class="ri-edit-line align-middle fs-20"></i></a>
-                                                                      <a href="#!" class="link-danger"><i class="ri-delete-bin-5-line align-middle fs-20"></i></a>
-                                                                 </div>
-                                                            </td>
-                                                       </tr>
-
-                                                       <tr>
-                                                            <td>
-                                                                 <a href="src/view/assets/images/food-icon/pic14.png">
-                                                                      <img src="src/view/assets/images/food-icon/pic14.png" alt="" class="avatar-lg">
-                                                                 </a>
-                                                            </td>
-                                                            <td>
-                                                                 <div class="d-flex align-items-center gap-1">
-                                                                      <div>
-                                                                           <a href="#!" class="link-dark fw-semibold fs-15">Gourmet Burger</a>
-                                                                           <p class="mb-0 mt-1">-</p>
-                                                                      </div>
-                                                                 </div>
-                                                            </td>
-                                                            <td>A burger is a patty of ground meat grilled and placed between two...</td>
-                                                            <td>Lettuce , Tomato , Onion , Avocado , Roasted Bell Peppers , Mushrooms , Sprouts or Micrograms , Coleslaw...</td>
-                                                            <td>$14.00</td>
-                                                            <td>
-                                                                 <p class="mb-0"><i class="ri-star-fill text-warning me-1 fs-16"></i>4.5/5</p>
-                                                            </td>
-                                                            <td>Hamburger</td>
-                                                            <td>
-                                                                 <div class="avatar-sm">
-                                                                      <span class="avatar-title rounded-2 fw-semibold border border-success text-success">
-                                                                           <i class="ri-circle-fill fs-16"></i>
-                                                                      </span>
-                                                                 </div>
-                                                            </td>
-                                                            <td>
-                                                                 <div class="d-flex gap-3">
-                                                                      <a href="#!" class="text-muted"><i class="ri-eye-line align-middle fs-20"></i></a>
-                                                                      <a href="#!" class="link-dark"><i class="ri-edit-line align-middle fs-20"></i></a>
-                                                                      <a href="#!" class="link-danger"><i class="ri-delete-bin-5-line align-middle fs-20"></i></a>
-                                                                 </div>
-                                                            </td>
-                                                       </tr>
+                                                       </tr> -->
                                                   </tbody>
                                              </table>
                                         </div>

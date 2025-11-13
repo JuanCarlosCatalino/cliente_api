@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="d-flex gap-3">
                                              <a href="#/" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#AgregarToken">Nuevo Token</a>
+                                                data-bs-target="#AgregarToken">Nuevo Token</a>
                                              <div class="dropdown">
                                                   <a href="#" class="dropdown-toggle btn btn-sm btn-outline-light rounded" data-bs-toggle="dropdown" aria-expanded="false">
                                                        Reportes
@@ -103,11 +103,11 @@
                                                             <th>Token No.</th>
                                                             <th>F. Registro</th>
                                                             <th>Token</th>
-                                                            <th>Descripción</th>
+                                                          <!--   <th>Descripción</th> -->
                                                             <th>Action</th>
                                                        </tr>
                                                   </thead>
-                                                  <tbody id="tbody_tokensApi">
+                                                  <tbody id="tbody_tokens">
 
                                                   </tbody>
                                              </table>
@@ -146,8 +146,8 @@
                        <div class="modal-body">
                             <form id="frm_new_token">
                                 <div class="mb-3">
-                                        <label for="tokenApi" class="form-label">Token</label>
-                                        <input type="text" id="tokenApi" name="tokenApi" class="form-control">
+                                        <label for="tokennn" class="form-label">Token</label>
+                                        <input type="text" id="tokennn" name="tokennn" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                         <label for="descripcion" class="form-label">Descripción</label>
@@ -160,7 +160,7 @@
                </div>
            </div>
 
-            <div class="modal fade" id="actualizazrToken" aria-hidden="true" aria-labelledby="actualizazrTokenLabel" tabindex="-1">
+            <div class="modal fade" id="act_token" aria-hidden="true" aria-labelledby="act_tokenLabel" tabindex="-1">
                <div class="modal-dialog modal-dialog-centered">
                    <div class="modal-content">
                        <div class="modal-header">
@@ -168,8 +168,9 @@
                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                        </div>
                        <div class="modal-body">
-                            <input type="hidden" id="idToken_new" name="idToken_new" value="">
+                            
                             <form id="frm_update_token">
+                                <input type="hidden" id="idToken_new" name="idToken_new" value="">
                                 <div class="mb-3">
                                         <label for="tokenApi_new" class="form-label">Token</label>
                                         <input type="text" id="tokenApi_new" name="tokenApi_new" class="form-control">
@@ -185,4 +186,4 @@
                </div>
            </div>
 
-    <script src="<?php echo BASE_URL; ?>src/view/js/tokensApi.js"></script>
+     <script src="<?php echo BASE_URL;?>src/view/js/admin-tokensApi.js"></script>

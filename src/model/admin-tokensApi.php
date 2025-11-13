@@ -26,7 +26,7 @@ class tokenModel{
         return $sql;
  }
 
-    public function verificarDuplidadToken($token) {
+    public function vertokenssimilares($token) {
         $stmt = $this->conexion->prepare("SELECT id FROM tokens_api WHERE token = ?");
         $stmt->bind_param("s", $token);
         $stmt->execute();
